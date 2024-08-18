@@ -5,10 +5,10 @@ main:
     blank: true
     description: "The documentation for this theme, on https://perstarke-webdev.de"
   - title: "News"
-    url: /#section-1
+    url: /news
     blank: false
   - title: "Team Memebers"
-    url: /#section-2
+    url: /#section-3
     blank: false
   - title: "Work"
     url: /#section-3

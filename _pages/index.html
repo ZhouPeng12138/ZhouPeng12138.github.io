@@ -24,7 +24,7 @@ excerpt: "**Hello, this is an attempt to build a website**"
 
 
 gallery:
-    - url: /assets/images/header.webp
+    - url: "https://www.zjuers.com/black"
       image_path: /assets/images/header.webp
       alt: "placeholder image 1"
       title: "Image 1 title caption"
@@ -41,8 +41,9 @@ gallery:
 round-images:
     - image-path: "/assets/images/leader.webp"
       size: "full"
-      header: "leader"
-      caption: "Caption 1"
+      header: "汪笑溪"
+      caption: "浙江大学公共管理学院"
+      url: https://person.zju.edu.cn/xiaoxi_wang
     - image-path: "/assets/images/sydney-2.webp"
       size: "third"
       header: "Header 2"
@@ -59,10 +60,11 @@ round-images:
       size: "half"
       header: "Header 5"
       caption: "Caption 5"
-    - image-path: "/assets/images/sydney-6.webp"
+    - image-path: "/assets/images/zhoupeng.webp"
       size: "half"
-      header: "Header 6"
-      caption: "Caption 6"
+      header: "周鹏"
+      caption: "0.0"
+      url: "/members/zhoupeng.html"
 
 image-text-row:
     - header: "Image-Text-Row"
@@ -87,7 +89,7 @@ image-text-row-two:
 
 <section class="site-section alternative-color first-section" id="section-1">
 
-    <h1>This is OneFlow Jekyll Theme. Section 1, in alternative color</h1>
+    <h1>This is a brief introduction to MAgPIE-China Team</h1>
 
     <h2>Practical Design</h2>
 
@@ -108,15 +110,13 @@ image-text-row-two:
     OneFlow is licensed under the <a href="https://opensource.org/license/mit/" rel="noopener noreferrer nofollow" target="_blank">MIT License</a>.
     That means, you can freely copy, use and customize it - whatever you like!
 
-    <h2>Drop in galleries, round images or image-text-rows</h2>
+    <h2> Team Members</h2>
+
+    {% include round-images %}
 
     <h3>Gallery</h3>
 
     {% include gallery caption="Gallery captions, just like the rest of the theme, **support Markdown**"%}
-
-    <h3> Round Images</h3>
-
-    {% include round-images %}
 
     <h3> Image-Text-Rows</h3>
 
