@@ -1,0 +1,12 @@
+.publicationListing {
+  border-top: 3px solid #e1e3d4;
+}
+
+.publicationItem {
+  border-bottom: 3px solid #e1e3d4;
+  padding: 20px 0;
+
+  &__link {
+    @include contentLink;
+  }
+}

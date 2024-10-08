@@ -1,0 +1,128 @@
+@mixin contentDimensions {
+  max-width: 975px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 50px;
+  }
+}
+
+@mixin btn() {
+  background-color: $secondary;
+  border: 0;
+  padding: 0;
+
+  &:not(:disabled):hover {
+    background-color: $hover;
+  }
+
+  &:focus,
+  &:active {
+    background-color: $active;
+    outline: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $disabled !important;
+    cursor: auto;
+
+    svg {
+      stroke: #d0d4c6;
+    }
+  }
+}
+
+@mixin sansFontFamily($weight: 500) {
+  font-family: $font-family-sans-condensed;
+  font-weight: $weight;
+}
+
+@mixin link() {
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  display: inline-block;
+  padding: 2px 0;
+  transition: border-color .3s;
+
+  &:hover {
+    border-bottom-color: #000;
+  }
+}
+
+@mixin contentLink($width: 1px) {
+  border-bottom: $width solid transparent;
+  transition: border-color .3s;
+
+  &:hover {
+    border-bottom-color: currentColor;
+  }
+}
+
+@mixin hoverEffect() {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0);
+    transition: background-color .3s;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    text-decoration: none;
+
+    &::before {
+      background-color: rgba(0,0,0,.15);
+    }
+  }
+}
+
+@mixin smallerFont() {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin contentCore() {
+  font-size: 17px;
+  line-height: 1.77;
+
+  a:not(.plainLink) {
+    border-bottom: 1px solid;
+    transition: padding-bottom .15s;
+
+    &:hover {
+      padding-bottom: 1px;
+    }
+  }
+}
+
+@mixin borderedLink() {
+  border-bottom: 1px solid;
+  transition: padding-bottom .15s;
+
+  &:hover {
+    padding-bottom: 1px;
+  }
+}
+
+@mixin readMore() {
+  align-self: flex-start;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  letter-spacing: $letterSpacing;
+  line-height: 1.43;
+  margin-top: auto;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+  transition: border-color .3s;
+  @include sansFontFamily;
+}

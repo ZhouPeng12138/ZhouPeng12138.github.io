@@ -1,0 +1,69 @@
+.template-pik_news_view .content {
+  max-width: none;
+  padding: 0;
+}
+
+.pikNewsConatainer,
+.template-pik_news_view .documentByLine {
+  @include contentDimensions;
+}
+
+.template-pik_news_view .content .portalMessage,
+.template-pik_news_view #edit-bar {
+  max-width: 875px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pikNewsDescription {
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.pikNewsFigure {
+  margin-bottom: 50px;
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  figcaption {
+    font-family: $font-family-sans;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.furtherInformationContainer {
+  background-color: #eceeed;
+  margin-bottom: 50px;
+  padding: 50px 20px 1px;
+
+  @include media-breakpoint-up(lg) {
+    margin-left: calc((100% - 875px) / 2 * 0.6);
+    padding: 50px 90px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+  }
+}
+
+.furtherInformation {
+  @include media-breakpoint-up(lg) {
+    width: 31.35%;
+    margin-right: 9.3%;
+  }
+}
+
+.furtherContact {
+  @include media-breakpoint-up(lg) {
+    width: 24.5%;
+    margin-right: 9.3%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News</title>
+    <title id="page-title">欢迎来到我的网站</title>
+    <style>
+        /* 添加一些简单的样式 */
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>News</h1>
-    <ul>
-        <li><a href="article1.html">Article 1</a></li>
-        <li><a href="article2.html">Article 2</a></li>
-    </ul>
+    <!-- 右上角的语言切换按钮 -->
+    <div class="language-switcher">
+        <button onclick="setLanguage('zh')">中文</button>
+        <button onclick="setLanguage('en')">English</button>
+    </div>
+
+    <h1 id="header-title">欢迎来到我的网站</h1>
+    <p id="description">这是一个多语言网页的示例。</p>
+
+    <!-- 引入语言切换的 JavaScript 文件 -->
+    <script src="language.js"></script>
 </body>
 </html>

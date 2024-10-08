@@ -13,6 +13,6 @@ main:
   - title: "Work"
     url: /#section-3
     blank: false
-  - title: "Contact"
-    url: /#section-4
+  - title: <font size=1>中文</font>
+    url: /ch
     blank: false

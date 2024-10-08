@@ -1,0 +1,101 @@
+.pikInMedia {
+  margin-bottom: 70px;
+  padding: 0 20px;
+
+  @include media-breakpoint-up(xl) {
+    max-width: 1054px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 22px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 3px solid #e1e3d4;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+
+      &::before,
+      &::after {
+        width: calc(50% - 15px);
+      }
+
+      &::after {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  &__item {
+    @include media-breakpoint-up(md) {
+      width: calc(50% - 30px);
+      margin: 0 15px;
+    }
+  }
+
+  &__footer {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  &__all {
+    font-family: $font-family-sans-condensed;
+    @include smallerFont;
+    letter-spacing: $letterSpacing;
+    text-transform: uppercase;
+    @include link;
+  }
+}
+
+.pikInMediaItem {
+  border-bottom: 3px solid #e1e3d4;
+  padding: 30px 0;
+
+  &__byLine {
+    font-family: $font-family-sans-condensed;
+    font-weight: 500;
+    @include smallerFont;
+    letter-spacing: $letterSpacing;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    font-family: $font-family-sans-condensed;
+    font-weight: 500;
+    @include smallerFont;
+    letter-spacing: $letterSpacing;
+    text-transform: uppercase;
+    @include link;
+  }
+}

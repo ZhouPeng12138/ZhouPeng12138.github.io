@@ -1,0 +1,199 @@
+@mixin asideMenuVisibility() {
+  .asideNavCheckbox:checked ~ .asideNav & {
+    display: none;
+  }
+}
+
+// styling regarding content aligments and positions
+main.aside-nav-exists {
+  .aside-and-content-wrapper {
+    display: flex;
+
+    @include media-breakpoint-down(lg) {
+      #aside-nav {
+        display: none;
+      }
+
+      #content {
+        flex-basis: 100% !important;
+      }
+    }
+
+    #aside-nav {
+      position: sticky;
+      flex-basis: 20%;
+      top: 130px;
+      height: fit-content;
+
+      #nav-toggle-aside {
+        max-width: fit-content;
+        background-color: $primary;
+      }
+    }
+
+    #content {
+      flex-basis: 80%;
+      margin: 0;
+
+      #content-core {
+        > div {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.asideNavCheckbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.asideNav {
+  color: #f3f3e4;
+  font-family: $font-family-sans;
+  z-index: 1018;
+  font-weight: 500;
+  padding: 0 30px 50px 50px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+
+  .asideNavCheckbox:not(:checked) ~ & {
+    background-color: $primary;
+  }
+
+  .asideNavCheckbox:checked ~ & {
+    padding: 0;
+    width: auto;
+  }
+
+  .section-front-page &,
+  .section-home &,
+  .section-startseite & {
+    display: none;
+  }
+
+  &__header {
+    background-color: #344643;
+    padding-top: 30px;
+    position: relative;
+  }
+
+  .asideNavCheckbox:checked ~ & &__header {
+    padding: 0;
+  }
+
+  a {
+    color: #f3f3e4;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__toggle {
+    height: 50px;
+    padding-top: 15px;
+    text-align: center;
+    display: none;
+
+    .asideNavCheckbox:checked ~ .asideNav & {
+      display: block;
+    }
+  }
+
+  &__close {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    height: 15px;
+    position: absolute;
+    top: 35px;
+    right: 0;
+
+    svg {
+      vertical-align: top;
+      width: 15px;
+      height: 15px;
+      stroke-width: 6px;
+    }
+
+    @include asideMenuVisibility;
+  }
+
+  &__parent {
+    position: absolute;
+    top: 35px;
+    left: -30px;
+
+    @include asideMenuVisibility();
+
+    &[level="navTreeLevel1"] {
+      display: none !important;
+    }
+
+    svg {
+      vertical-align: top;
+    }
+  }
+
+  &__current {
+    font-size: 12px;
+    letter-spacing: 0.08333em;
+    padding: 1px 20px 1px 0;
+    text-transform: uppercase;
+
+    @include asideMenuVisibility();
+  }
+
+  .breadcrumbs {
+    margin-bottom: 30px;
+  }
+}
+
+.asideNavToggle {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  line-height: 20px;
+  margin: 0;
+  padding-right: 14px;
+  padding-left: 14px;
+
+  svg {
+    margin-right: 10px;
+    vertical-align: top;
+  }
+}
+
+.asideMenu {
+  @include list-unstyled;
+  margin: 30px 0 0;
+  font-size: 14px;
+  letter-spacing: 0.07143em;
+  line-height: 26px;
+  max-height: 640px;
+  overflow-y: scroll;
+
+  li {
+    padding: 7px 0;
+
+    a {
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      padding: 2px 0;
+      vertical-align: top;
+
+      &:hover,
+      &:focus {
+        border-color: $secondary;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include asideMenuVisibility;
+}

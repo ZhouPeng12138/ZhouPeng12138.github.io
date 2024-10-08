@@ -1,0 +1,16 @@
+.btn {
+  letter-spacing: $letterSpacing;
+  text-transform: uppercase;
+
+  &-secondary {
+    &:hover {
+      background-color: $hover;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $active;
+      box-shadow: none;
+    }
+  }
+}

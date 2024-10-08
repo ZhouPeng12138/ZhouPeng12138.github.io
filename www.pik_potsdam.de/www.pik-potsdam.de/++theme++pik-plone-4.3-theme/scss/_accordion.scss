@@ -1,0 +1,45 @@
+$personDetailsAccordionItemIcon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='21.213' height='21.213' viewBox='0 0 21.213 21.213' fill='none' stroke='#344643' stroke-linecap='square' stroke-width='3'><path d='M19.092 10.606l-8.485 8.486-8.485-8.486'/></svg>");
+
+.accordionItem {
+  margin-bottom: 5px;
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__btn {
+    background-color: #f5f6f6;
+    border-radius: 0;
+    font-family: $font-family-sans;
+    font-size: 22px;
+    line-height: 1.6;
+    padding: 20px 60px 20px 34px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    &::after {
+      content: '';
+      background: escape-svg($personDetailsAccordionItemIcon);
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 25px;
+      right: 34px;
+      transition: transform .15s;
+    }
+
+    &[aria-expanded="true"]::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__body {
+    padding: 50px 34px;
+
+    p {
+      margin-bottom: 1.77em;
+    }
+  }
+}
