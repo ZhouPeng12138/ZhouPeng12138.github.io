@@ -4,14 +4,14 @@ main:
     url: https://github.com/magpiemodel/magpie
     blank: true
     description: "The documentation for this theme, on https://perstarke-webdev.de"
-  - title: "News"
-    url: /news
+  - title: "Team"
+    url: /#Team
     blank: false
-  - title: "Team Memebers"
-    url: /#section-3
+  - title: "News"
+    url: /#News
     blank: false
   - title: "Work"
-    url: /#section-3
+    url: /#Work
     blank: false
   - title: <font size=1>中文</font>
     url: /ch

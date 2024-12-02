@@ -11,7 +11,7 @@
         <div class="itr-container">
             <div class="itr-text">
                 {% if itr.header %}
-                    <h3>{{itr.header}}</h3>
+                    <font color="black"><h3>{{itr.header}}</h3></font>
                 {% endif %}
                 {% if itr.excerpt %}
                     <p>{{itr.excerpt}}</p>
@@ -40,7 +40,7 @@
             </div>
             <div class="itr-text">
                 {% if itr.header %}
-                    <h3>{{itr.header}}</h3>
+                <font color="black"><h3>{{itr.header}}</h3></font>
                 {% endif %}
                 {% if itr.excerpt %}
                     <p>{{itr.excerpt}}</p>
