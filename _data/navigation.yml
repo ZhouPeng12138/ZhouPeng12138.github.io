@@ -1,6 +1,6 @@
 # main links
 main:
-  - title: "What is MAgPIG-China?"
+  - title: "What is MAgPIE-China?"
     url: https://github.com/magpiemodel/magpie
     blank: true
     description: "The documentation for this theme, on https://perstarke-webdev.de"
