@@ -1,0 +1,471 @@
+/* 基本重置 */
+body, h1, h2, h3, p, ul, li, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8; /* 淺灰色背景 */
+    margin: 0;
+}
+
+a {
+    color: #007bff; /* 鏈接顏色 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* 頁頭 */
+.site-header {
+    background-color: #333; /* 深色背景 */
+    color: #fff;
+    padding: 1.2rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* 保持相對定位，確保 z-index 生效 */
+    z-index: 100; /* 確保頁頭在最頂層 */
+}
+
+.header-container {
+    max-width: 1000px; /* 內容最大寬度保持不變 */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2em;
+    margin: 0;
+}
+
+.site-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #007bff;
+}
+
+/* 新增的左側浮動導航欄樣式 */
+.left-floating-nav {
+    position: fixed; /* 固定定位 */
+    top: 50%; /* 距離頂部 50% */
+    left: 20px; /* 距離左側 20px */
+    transform: translateY(-50%); /* 向上移動自身高度的 50%，實現垂直居中 */
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+    border-radius: 8px; /* 圓角 */
+    padding: 10px 5px; /* 內部留白 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 90; /* 確保它在頁面內容之上，但低於頁頭 */
+}
+
+.left-floating-nav ul { 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-floating-nav li {
+    margin-bottom: 5px; /* 列表項之間的間距 */
+}
+
+.left-floating-nav li:last-child {
+    margin-bottom: 0; /* 最後一個列表項沒有底部間距 */
+}
+
+.left-floating-nav a {
+    display: block; /* 讓整個區域可點擊 */
+    color: #fff; /* 圖標和文字顏色 */
+    text-decoration: none;
+    padding: 10px; /* 點擊區域大小 */
+    font-size: 1.5em; /* 圖標大小 */
+    text-align: center; /* 圖標居中 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px; /* 圓角 */
+}
+
+.left-floating-nav a:hover {
+    background-color: rgba(0, 123, 255, 0.8); /* 懸停背景色 */
+    color: #fff;
+}
+
+.left-floating-nav a i {
+    /* 圖標在小方塊導航中通常不需要文本，所以我們只顯示圖標 */
+    /* 之前的文本如果需要，可以考慮用 title 屬性提供 tooltip */
+}
+
+
+/* 主要內容區 */
+.content-wrapper {
+
+    max-width: 100% !important; /* 保持內容最大寬度 */
+    min-width: 0;
+    margin: 10px auto; /* 內容區塊在頁面中央，不再受左側導航影響 */
+    padding: 0 0px; /* 內容區塊的內部留白 */
+    /* 考慮到左側浮動導航欄，給內容區左側留出一些額外空間，防止重疊 */
+    padding-left: 0px; /* 根據左側導航欄的寬度和位置調整 */
+    position: relative; 
+}
+
+
+/* ... 其餘的樣式與之前保持一致 ... */
+
+/* 個人資料區塊 */
+.profile-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    padding: 3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-info h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.profile-info .title {
+    font-size: 23px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.profile-info .affiliation {
+    font-size: 20px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    margin-top: 15px;
+}
+
+.contact-links a {
+    font-size: 20pt;
+    margin: 0 10px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #007bff;
+}
+
+.about-me {
+    flex-grow: 1;
+    padding-left: 20px;
+    border-left: 1px solid #eee;
+}
+
+.about-me h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.about-me p {
+    margin-bottom: 1em;
+    font-size: 15pt;
+    line-height: 1.7;
+    color: #444;
+    text-align: left;
+}
+
+/* 可摺疊區塊 (Research, Publications, Awards) */
+.collapsible-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.section-header {
+    display: block;
+    padding: 20px 30px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.section-header:hover {
+    background-color: #e8e8e8;
+}
+
+.section-header h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 30px;
+}
+
+.toggle-checkbox:checked + .section-header + .section-content {
+    max-height: 1000px;
+    padding: 20px 30px;
+}
+
+.toggle-checkbox:checked + .section-header .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.section-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-content li {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #444;
+}
+
+.section-content h4 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.4em;
+    color: #555;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.section-content li a {
+    margin-left: 15px;
+    font-size: 20px;
+    color: #007bff;
+}
+
+/* 聯繫方式區塊 */
+.contact-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-section h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.contact-section ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.contact-section li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    color: #444;
+}
+
+.social-contact {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-contact a {
+    font-size: 2.2em;
+    margin: 0 15px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.social-contact a:hover {
+    color: #007bff;
+}
+
+/* 頁腳 */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.9em;
+    /* 頁腳依然會隨內容滾動，但寬度恢復正常 */
+}
+
+.footer-container {
+    max-width: 1000px; /* 與內容區寬度保持一致 */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 響應式設計 */
+@media (max-width: 960px) { /* 當屏幕寬度小於960px時 */
+    .left-floating-nav {
+        display: none; /* 隱藏左側浮動導航 */
+    }
+
+    .content-wrapper {
+        padding-left: 20px; /* 移除額外的左側內邊距 */
+    }
+
+    /* 頁頭導航在小屏幕上垂直堆疊 */
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-title {
+        margin-bottom: 15px;
+    }
+
+    .main-nav ul {
+        padding-top: 10px;
+    }
+
+    .main-nav li {
+        margin: 0 10px;
+        display: block; /* 垂直堆疊導航菜單 */
+        margin-bottom: 8px;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .profile-info h2 {
+        font-size: 2em;
+    }
+
+    .about-me {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    .section-header, .section-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    overflow-x: hidden; /* 防止水平滾動條 */
+    position: relative; /* 為偽元素定位提供參考 */
+    z-index: 1; /* 確保 body 內容在偽元素之上 */
+
+    /* 背景图片 */
+    background-image: url('/assets/images/background.webp'); /* 請替換為你的圖片路徑 */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* 背景圖片疊加層 */
+body::before {
+    content: ""; /* 偽元素必須有 content 屬性 */
+    position: fixed; /* 讓疊加層固定在視窗中 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(244, 247, 246, 0.7); /* 半透明的顏色，RGBA 值 */
+    /* RGBA 說明：
+       - 前三個值 (244, 247, 246) 是 RGB 顏色，這裏我用了之前背景色的 RGB 值。你可以改成任何你想要的顏色，例如黑色 (0,0,0) 或白色 (255,255,255)。
+       - 最後一個值 (0.7) 是 alpha (透明度) 值，範圍從 0 (完全透明) 到 1 (完全不透明)。0.7 表示 70% 不透明，30% 透明。
+    */
+    z-index: -1; /* 確保疊加層在 body 內容之下，但在背景圖片之上 */
+}

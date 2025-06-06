@@ -26,8 +26,18 @@
                 {% endif %}
             </div>
             <div class="itr-image-container">
+
+            {% if itr.url %}
+               <a href="{{ itr.url }}" target="_blank"> 
                 <img src="{{itr.image-url}}" alt="{{itr.alt-text | default: ""}}" class="itr-image" {% if itr.image-width%}
                 style="width:{{itr.image-width}}"{% endif %}>
+                </a>
+
+            {% else %}
+                <img src="{{itr.image-url}}" alt="{{itr.alt-text | default: ""}}" class="itr-image" {% if itr.image-width%}
+                style="width:{{itr.image-width}}"{% endif %}>
+            {% endif %}
+
             </div>
         </div>
 
@@ -35,8 +45,17 @@
 
         <div class="itr-container">
             <div class="itr-image-container">
+            {% if itr.url %}
+               <a href="{{ itr.url }}" target="_blank"> 
                 <img src="{{itr.image-url}}" alt="{{itr.alt-text | default: ""}}" class="itr-image" {% if itr.image-width%}
                 style="width:{{itr.image-width}}"{% endif %}>
+                </a>
+
+            {% else %}
+                <img src="{{itr.image-url}}" alt="{{itr.alt-text | default: ""}}" class="itr-image" {% if itr.image-width%}
+                style="width:{{itr.image-width}}"{% endif %}>
+            {% endif %}
+
             </div>
             <div class="itr-text">
                 {% if itr.header %}
