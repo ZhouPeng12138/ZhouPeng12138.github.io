@@ -5,13 +5,13 @@ main:
     blank: true
     description: "The documentation for this theme, on https://perstarke-webdev.de"
   - title: "Team"
-    url: /#Team
+    url: /members/index.html
     blank: false
   - title: "News"
     url: /#News
     blank: false
-  - title: "Work"
-    url: /#Work
+  - title: "Showcase"
+    url: /showcase/index.html
     blank: false
   - title: <font size=1>中文</font>
     url: /ch
