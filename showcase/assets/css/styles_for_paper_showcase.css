@@ -1,0 +1,343 @@
+/* 基本重置 */
+body, h1, h2, h3, p, ul, li, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    overflow-x: hidden; /* 防止水平滾動條 */
+    position: relative; /* 為偽元素定位提供參考 */
+    z-index: 1; /* 確保 body 內容在偽元素之上 */
+
+    /* 背景图片 */
+    background-image: url('/assets/images/background.webp'); /* 請替換為你的圖片路徑 */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* 背景圖片疊加層 */
+body::before {
+    content: ""; /* 偽元素必須有 content 屬性 */
+    position: fixed; /* 讓疊加層固定在視窗中 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(244, 247, 246, 0.7); /* 半透明的顏色，RGBA 值 */
+    /* RGBA 說明：
+       - 前三個值 (244, 247, 246) 是 RGB 顏色，這裏我用了之前背景色的 RGB 值。你可以改成任何你想要的顏色，例如黑色 (0,0,0) 或白色 (255,255,255)。
+       - 最後一個值 (0.7) 是 alpha (透明度) 值，範圍從 0 (完全透明) 到 1 (完全不透明)。0.7 表示 70% 不透明，30% 透明。
+    */
+    z-index: -1; /* 確保疊加層在 body 內容之下，但在背景圖片之上 */
+}
+
+/* ... 文件的其餘部分保持不變 ... */
+
+/* 確保內容層在疊加層之上，特別是如果你有其他 z-index 設定的話 */
+.site-header, .content-area, .site-footer {
+    position: relative;
+    z-index: 2; /* 確保內容顯示在疊加層之上 */
+}
+
+/* 頁頭 */
+.site-header {
+    background-color: #e2e3d5; /* 头部背景颜色 */
+    color: #ecf0f1;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1100px; /* 設置最大寬度，與範例網站內容區寬度相似 */
+    margin: 0 auto;
+    padding: 0 25px; /* 內部留白 */
+    display: flex; /* 使用 Flexbox 進行佈局 */
+    justify-content: space-between; /* 標題和導航欄左右分開 */
+    align-items: center; /* 垂直居中對齊 */
+}
+
+.site-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.2em;
+    margin: 0;
+}
+
+.site-title a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-title a:hover {
+    color: #3498db; /* 藍色 */
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 30px; /* 導航項之間的間距 */
+}
+
+.main-nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #3498db;
+}
+
+/* 主要內容區 */
+.content-area {
+    max-width: 1100px; /* 與頁頭容器保持一致 */
+    margin: 40px auto;
+    padding: 0 25px; /* 內部留白 */
+}
+
+.paper-detail-card {
+    background-color: #e2e3d5;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* 較明顯的陰影 */
+    padding: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.paper-info-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+    text-align: center; /* 標題居中 */
+}
+
+.paper-info-header h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.2em; /* 較大的論文標題 */
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.paper-info-header .authors,
+.paper-info-header .publication {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.paper-actions {
+    margin-top: 25px;
+}
+
+.action-btn {
+    display: inline-block;
+    padding: 14px 30px; 
+    margin: 0 12px; 
+    border-radius: 5px; 
+    text-decoration: none;
+    font-weight: 700; /* 加粗字體 */
+    font-size: 14pt;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap; /* 防止按鈕文本換行 */
+}
+
+.primary-btn {
+    background-color: #3498db; /* 藍色主按鈕 */
+    color: #ffffff !important;
+    border: 1px solid #3498db;
+}
+
+.primary-btn:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.secondary-btn {
+    background-color: #ecf0f1; /* 淺灰色次要按鈕 */
+    color: #2c3e50 !important;;
+    border: 1px solid #bdc3c7;
+}
+
+.secondary-btn:hover {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    border-color: #95a5a6;
+}
+
+.action-btn i {
+    margin-right: 10px;
+}
+
+/* 論文內容區塊 */
+.paper-body h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 22pt;
+    color: #34495e; /* 暗灰色 */
+    margin-top: 35px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1; /* 分割線 */
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+.abstract-section p {
+    margin-bottom: 1.2em;
+    font-size: 14pt;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify; /* 兩端對齊 */
+}
+
+/* 圖片展示區塊 */
+.image-showcase {
+    margin-top: 45px; 
+}
+
+.image-grid {
+    display: grid;
+    /* 圖片網格，自動適應列數，每列最小300px寬，最大佔據可用空間 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* 圖片之間的間距 */
+    justify-content: center; /* 網格內容居中 */
+}
+
+.image-item {
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0; /* 确保没有多余内边距 */
+    width: auto; /* 宽度自适应 */
+    height: auto; /* 新增，确保高度自适应 */
+    max-width: 100%; /* 防止超出父容器 */
+}
+
+.image-item:hover {
+    transform: translateY(-8px); /* 懸停時輕微上移 */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* 更明顯的陰影 */
+}
+
+.image-item img {
+    width: 100%;
+    height: auto !important; /* 设置图片高度: height: 240px; */
+    object-fit: cover; /* 裁剪圖片以填充，保持比例 */
+    display: block;
+    border-bottom: 0px solid #eee; 
+    margin: 0; /* 新增，消除图片下方空隙 */
+}
+
+.image-item figcaption {
+    padding: 0px;
+    font-size: 12pt;
+    color: #666;
+    text-align: center;
+    background-color: #f9f9f9; 
+    display: block; /* 确保是块级元素 */
+    width: 100%;    /* 占满父容器宽度 */
+    margin: 0 auto; /* 居中对齐 */
+}
+
+/* 頁腳 */
+.site-footer {
+    background-color: #34495e; /* 暗灰色 */
+    color: #ecf0f1;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    max-width: 1100px; /* 與其他容器保持一致 */
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* 頁頭內容垂直堆疊 */
+        text-align: center;
+    }
+
+    .site-title {
+        margin-bottom: 15px;
+    }
+
+    .main-nav ul {
+        padding-top: 10px;
+    }
+
+    .main-nav li {
+        margin: 0 10px;
+    }
+
+    .paper-info-header h2 {
+        font-size: 2em;
+    }
+
+    .action-btn {
+        padding: 12px 25px;
+        margin: 8px 0; /* 垂直堆疊按鈕 */
+        display: block;
+        width: 100%; /* 按鈕佔滿寬度 */
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* 單列佈局 */
+        gap: 20px; 
+    }
+
+    .image-item img {
+        height: auto; /* 在小屏幕上圖片高度自動調整 */
+        weight: auto; /* 確保圖片寬度自動調整 */
+    }
+}
+
+
+
+.paper-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 0 0 0;
+    padding: 0 8px;
+}
+
+.paper-nav a {
+    flex: 1 1 0;
+    text-align: center;
+    font-size: 12pt;      /* 调整按钮文本大小 */
+    padding: 10px 0;
+    border-radius: 6px;
+    background: #96cbfe ! important; /* 按钮背景颜色 */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+    margin: 0 8px; /* 按钮之间留间距 */
+    min-width: 0;  /* 防止内容溢出 */
+}
+.paper-nav a:first-child {
+    margin-left: 0;
+}
+.paper-nav a:last-child {
+    margin-right: 0;
+}
+
+.paper-nav a:hover {
+    background: #d0e6f7;
+}
