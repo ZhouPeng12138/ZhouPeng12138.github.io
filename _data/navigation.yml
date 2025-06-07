@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "What is MAgPIE-China?"
-    url: https://github.com/magpiemodel/magpie
+    url: https://github.com/MAgPIE-China
     blank: true
-    description: "The documentation for this theme, on https://perstarke-webdev.de"
+    description: "The documentation for MAgPIE-China"
   - title: "Team"
     url: /members/index.html
     blank: false
