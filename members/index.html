@@ -25,7 +25,7 @@ round-images:
     - image-path: "/assets/images/logo.png"
       size: "third"
       header: "PIK"
-      caption: "Caption 2"
+      caption: "Caption 1"
       url: "/members/pik.html"
     - image-path: "/members/xiaoxi_wang/assets/images/xiaoxi_wang.webp"
       size: "third"
@@ -36,32 +36,37 @@ round-images:
       size: "third"
       header: "magpie"
       caption: "Caption 3"
-      url: "/members/xiaoxi_wang/xiaoxi_wang.html"
+      url: #
+    - image-path: "/members/hao_cai/assets/images/hao_cai.jpg"
+      size: "third"
+      header: "Hao Cai"
+      caption: "Dietary transition and food system emissions"
+      url: "/members/hao_cai/hao_cai.html"
+    - image-path: "/members/ruiying_du/assets/images/ruiying_du2.jpg"
+      size: "third"
+      header: "Ruiying Du"
+      caption: "Zhejiang Univerisity"
+      url: "/members/ruiying_du/ruiying_du.html"
     - image-path: "/assets/images/logo.png"
       size: "third"
-      header: "Header 4"
-      caption: "Caption 4"
+      header: "magpie"
+      caption: "Caption 6"
+      url: #
+    - image-path: "/members/peng_zhou/assets/images/peng_zhou.webp"
+      size: "third"
+      header: "Peng"
+      caption: "ZJU"
+      url: "/members/peng_zhou/peng_zhou.html"
     - image-path: "/assets/images/logo.png"
       size: "third"
-      header: "Header 5"
-      caption: "Caption 5"
-    - image-path: "#"
-      size: "third"
-      header: "周鹏"
-      caption: "0.0"
-      url: "/members/zhoupeng.html"
+      header: "magpie"
+      caption: "Caption 8"
+      url: #
     - image-path: "/assets/images/logo.png"
       size: "third"
-      header: "Header 4"
-      caption: "Caption 4"
-    - image-path: "/assets/images/logo.png"
-      size: "third"
-      header: "Header 5"
-      caption: "Caption 5"
-    - image-path: "/assets/images/logo.png"
-      size: "third"
-      header: "Header 5"
-      caption: "Caption 5"
+      header: "magpie"
+      caption: "Caption 9"
+      url: #
 ---
 
 <section class="site-section" id="Team">
@@ -77,36 +82,3 @@ round-images:
     {% include gallery caption="......"%}
 
 </section>
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-    overflow-x: hidden; /* 防止水平滾動條 */
-    position: relative; /* 為偽元素定位提供參考 */
-    z-index: 1; /* 確保 body 內容在偽元素之上 */
-
-    /* 背景图片 */
-    background-image: url('/assets/images/background.webp'); /* 請替換為你的圖片路徑 */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-/* 背景圖片疊加層 */
-body::before {
-    content: ""; /* 偽元素必須有 content 屬性 */
-    position: fixed; /* 讓疊加層固定在視窗中 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(244, 247, 246, 0.7); /* 半透明的顏色，RGBA 值 */
-    /* RGBA 說明：
-       - 前三個值 (244, 247, 246) 是 RGB 顏色，這裏我用了之前背景色的 RGB 值。你可以改成任何你想要的顏色，例如黑色 (0,0,0) 或白色 (255,255,255)。
-       - 最後一個值 (0.7) 是 alpha (透明度) 值，範圍從 0 (完全透明) 到 1 (完全不透明)。0.7 表示 70% 不透明，30% 透明。
-    */
-    z-index: -1; /* 確保疊加層在 body 內容之下，但在背景圖片之上 */
-}
